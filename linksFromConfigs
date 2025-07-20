@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+find . -type f -name 'openmw.cfg' -exec awk '
+BEGIN { 
+    print "# TOML Output of HTTPS links in openmw.cfg files"
+    printed_header = 0
+}
+FNR == 1 {
+    if (printed_file) {
+        if (url_count > 0) {
+            print ""
+        }
+        printed_file = 0
+    }
+    url_count = 0
+    file = FILENAME
+    sub(/^\.\//, "", file)
+    gsub(/"/, "\\\"", file)
+}
+/https?:\/\// {
+    if (!printed_file && !printed_header) {
+        printed_header = 1
+    }
+    if (!printed_file) {
+        printf "[%s]\n", file
+        printed_file = 1
+    }
+    for(i=1; i<=NF; i++) {
+        if(match($i, /(https?:\/\/[^[:space:]"'\''<>]+)/, urls)) {
+            url = urls[1]
+            gsub(/"/, "\\\"", url)
+            printf "url_%d = \"%s\"\n", ++url_count, url
+        }
+    }
+}
+END { 
+    if (printed_header) {
+        print "\n# End of output"
+    } else {
+        print "# No HTTPS links found in any openmw.cfg files"
+    }
+}
+' {} +

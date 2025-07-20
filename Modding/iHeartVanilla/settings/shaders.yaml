@@ -1,0 +1,66 @@
+config:
+  adjustments:
+    uGamma: 1
+    uContrast: 1.04999995
+  BadCRT:
+    uScanlines: 240
+    uBleed: 0.100000001
+    uStrength: 0.25
+  speedBlur:
+    uRadius: 0
+  blackScreen:
+    opacity: 0
+  hexDoFProgrammable:
+    uDepth: 1
+    uAperture: 0.000539205677
+  sneakVignette:
+    uMidPoint: 1
+  blackBarsProgrammable:
+    ratio: 0
+  hpWidget:
+    uPosition:
+      - 0.5
+      - 0.5
+    uScale: 1.10000002
+    uColor:
+      - 0.791999996
+      - 0.651000023
+      - 0.463
+    uDamageColor:
+      - 0.349019617
+      - 0.00784313772
+      - 0.0666666701
+    uOpacity: 0
+    uAnimatedSectors:
+      -
+        - 0
+        - 0
+        - 1
+      -
+        - 0
+        - 0
+        - 1
+      -
+        - 0
+        - 0
+        - 1
+    uMaxArcAngle: 1.29521799
+    uCurArcAngle: 1.29521799
+  epo_detd_skooma:
+    drugged_distortion_amount: 0
+    drugged_doublevision_amount: 0
+    drugged_fractals_size: 0
+    drugged_fractals_amount: 0
+  epo_detd_shrooms:
+    drugged_distortion_amount: 0.5
+    drugged_doublevision_amount: 0.5
+    drugged_fractals_size: 10
+    drugged_fractals_amount: 0.5
+  epo_detd_drunk:
+    uSwipeAmount: 0.0199999996
+    uOffsetStrength: 0.00999999978
+  reshade-oilify:
+    Sharpness: 1
+    Tuning: 2
+    Scale: 1
+    uEnabled: true
