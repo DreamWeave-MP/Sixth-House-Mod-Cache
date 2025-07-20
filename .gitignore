@@ -1,0 +1,19 @@
+*
+!**/
+Example Suite
+configs.zip
+groundcoverify.toml
+momw-configurator.toml
+**.log
+!/.gitignore
+!saveConfigs
+!linksFromConfigs
+!**/openmw.cfg
+!settings.cfg
+!input_v3.xml
+!player_storage.bin
+!global_storage.bin
+!shaders.yaml
+!lightconfig.toml
+!TES3Merge.ini
+Mods/PostProcessingShaders/MOMWPostProcessingPack/00 RecommendedConfig/shaders.yaml

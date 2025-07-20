@@ -1,0 +1,64 @@
+disable_interior_sun = false
+disable_flickering = true
+disable_pulse = true
+save_log = true
+auto_enable = false
+no_notifications = true
+debug = false
+standard_hue = 0.6200000047683716
+standard_saturation = 0.800000011920929
+standard_value = 0.5699999928474426
+standard_radius = 1.75
+# standard_radius = 0.925
+colored_hue = 1.0
+colored_saturation = 0.10000000149011612
+colored_value = 0.699999988079071
+colored_radius = 1.100000023841858
+duration_mult = 2.5
+excluded_plugins = [
+    "deleted_groundcover.omwaddon",
+    "Clean_Argonian Full Helms Lore Integrated.ESP",
+    "Baldurwind.omwaddon",
+    "Crassified Navigation.omwaddon",
+    "LuaMultiMark.omwaddon",
+    "S3maphore.esp",
+    "Toolgun.omwaddon",
+]
+excluded_ids = []
+output_dir = "/home/s3kshun8/.config/openmw/override"
+save_config = false
+
+# [light_overrides."^torch"]
+# radius = 1280
+# duration_mult = 25.0
+# flag = "NONE"
+
+[light_overrides.light_com_candle_03_64]
+hue = 4
+saturation = 0.7599999904632568
+value = 0.46299999952316284
+
+# [light_overrides.Torch_001]
+# hue = 240
+# radius = 255
+# duration = 1200.0
+
+# [light_overrides.Torch_002]
+# hue_mult = 1.2999999523162842
+# radius_mult = 2.0
+# flag = "PULSESLOW"
+
+# [ambient_overrides."caius cosades' house".ambient]
+# hue = 35
+# saturation = 0.2
+# value = 0.12
+
+# [ambient_overrides."caius cosades' house".sunlight]
+# hue = 40
+# saturation = 0.80
+# value = 0.25
+
+# [ambient_overrides."caius cosades' house".fog]
+# hue = 30
+# saturation = 0.1
+# value = 0.08
