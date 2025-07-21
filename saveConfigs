@@ -7,7 +7,7 @@ fi
 CONFIGS=configs.zip
 
 rm -rf ${CONFIGS}
-find . -type f \( -name 'openmw.cfg' -o -name 'settings.cfg' -o -name 'shaders.yaml' -o -name 'player_storage.bin' -o -name 'global_storage.bin' -o -iname 'TES3Merge.ini' -o -iname 'lightconfig.toml' \) -print | zip ${CONFIGS} -@
+find . -type f \( -name 'openmw.cfg' -o -name 'settings.cfg' -o -name 'shaders.yaml' -o -name 'player_storage.bin' -o -name 'global_storage.bin' -o -iname 'TES3Merge.ini' -o -iname 'lightconfig.toml' -o -iname '.gitkeep' \) -print | zip ${CONFIGS} -@
 
 echo "All OpenMW configurations dumped to:" "$HOME"/.config/openmw
 
