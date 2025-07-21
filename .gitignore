@@ -21,3 +21,5 @@ Mods/PostProcessingShaders/MOMWPostProcessingPack/00 RecommendedConfig/shaders.y
 
 !/.github/workflows/release.yml
 
+!/savedData/sw0rdsinger/.gitkeep
+
