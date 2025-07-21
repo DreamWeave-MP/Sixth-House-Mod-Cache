@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-cd "$HOME"/.config/openmw || exit 1
+
+if [[ ! -z "$CI" ]]; then
+    cd "$HOME"/.config/openmw || exit 1
+fi
 
 CONFIGS=configs.zip
 
