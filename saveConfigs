@@ -11,4 +11,6 @@ find . -type f \( -name 'openmw.cfg' -o -name 'settings.cfg' -o -name 'shaders.y
 
 echo "All OpenMW configurations dumped to:" "$HOME"/.config/openmw
 
-cd - || exit 1
+if [[ -z "$GITHUB_ACTIONS" ]]; then
+    cd - || exit 1
+fi
