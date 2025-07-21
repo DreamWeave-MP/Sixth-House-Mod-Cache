@@ -44,13 +44,13 @@ echo "4f8bf7700af0d8b198a55a56473999e7353ef3b4a847c17febad7003f6eefe56  dev-reso
 curl -sL -o stable-resources.zip https://github.com/DreamWeave-MP/dreamweave-high-end-resources/releases/download/${dw_res_version}/stable-resources.zip
 echo "87c7f79a3a67d4012bffac9fc16e409c36f2fbcd9d3bffb5dfbcaa5720030d50  stable-resources.zip" | sha256sum -c
 
-unzip dev-resources.zip -d linux-dev/Mods/PBR
-unzip dev-resources.zip -d macos-dev/Mods/PBR
-unzip dev-resources.zip -d windows-dev/Mods/PBR
+unzip -oqq dev-resources.zip -d linux-dev/Mods/PBR
+unzip -oqq dev-resources.zip -d macos-dev/Mods/PBR
+unzip -oqq dev-resources.zip -d windows-dev/Mods/PBR
 
-unzip stable-resources.zip -d linux-dev/Mods/PBR
-unzip stable-resources.zip -d macos-dev/Mods/PBR
-unzip stable-resources.zip -d windows-dev/Mods/PBR
+unzip -oqq stable-resources.zip -d linux-dev/Mods/PBR
+unzip -oqq stable-resources.zip -d macos-dev/Mods/PBR
+unzip -oqq stable-resources.zip -d windows-dev/Mods/PBR
 
 rm stable-resources.zip dev-resources.zip
 
