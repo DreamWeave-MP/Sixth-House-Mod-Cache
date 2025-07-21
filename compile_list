@@ -27,6 +27,10 @@ curl -sL -o dreamweave-tools-windows.zip https://github.com/DreamWeave-MP/DW-too
 echo "f8c65288fbc36136d0f81c96e79ce5a01f91b46e1c4e2413ca0578291d28a9cd dreamweave-tools-windows.zip" | sha256sum -c
 unzip dreamweave-tools-windows.zip -d windows
 
+mv windows/TES3Merge.ini windows/dreamweave-tools-windows
+mv linux/TES3Merge.ini linux/dreamweave-tools-linux
+mv macos/TES3Merge.ini macos/dreamweave-tools-macos
+
 rm -rf *.zip
 
 cp -r windows windows-dev
