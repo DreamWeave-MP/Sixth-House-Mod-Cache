@@ -16,6 +16,7 @@ unzip configs.zip -d linux
 unzip configs.zip -d macos
 
 curl -sL -o dreamweave-tools-linux.zip https://github.com/DreamWeave-MP/DW-tools/releases/download/v${dw_tools_version}/dreamweave_tools_linux.zip
+sha256sum dreamweave-tools-linux.zip
 echo "f56b75a77953a428000f6cf9b72dd942fb0f74a82abca5f777ca31e3b4457e92 dreamweave-tools-linux.zip" | sha256sum -c
 unzip dreamweave-tools-linux.zip -d linux
 
