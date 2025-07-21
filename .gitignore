@@ -17,3 +17,7 @@ momw-configurator.toml
 !lightconfig.toml
 !TES3Merge.ini
 Mods/PostProcessingShaders/MOMWPostProcessingPack/00 RecommendedConfig/shaders.yaml
+!/compile_list
+
+!/.github/workflows/release.yml
+

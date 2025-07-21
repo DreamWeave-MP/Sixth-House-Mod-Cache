@@ -1,0 +1,33 @@
+name: Build and Release Toolz
+
+on:
+    push:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Compile resources
+      run: chmod +x ./compile_list && ./compile_list
+
+    - name: Create release
+      if: github.ref_type == 'tag'
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          windows-dev.zip
+          windows-stable.zip
+          linux-dev.zip
+          linux-stable.zip
+          macos-dev.zip
+          macos-stable.zip
+        make_latest: true
+        generate release_notes: true
+        body: |
+          Freshly baked modlists - batch ${{ github.ref_name }}
+          • Built: ${{ github.run_number }} (Attempt ${{ github.run_attempt }})
+          • Commit: ${{ github.sha }}

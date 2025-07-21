@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+set -e
+
+dw_tools_version="0.0.21"
+dw_res_version="0.1.2"
+
+./saveConfigs
+
+mkdir -p windows
+mkdir -p linux
+mkdir -p macos
+
+unzip configs.zip -d windows
+unzip configs.zip -d linux
+unzip configs.zip -d macos
+
+curl -sL -o dreamweave-tools-linux.zip https://github.com/DreamWeave-MP/DW-tools/releases/download/v${dw_tools_version}/dreamweave_tools_linux.zip
+echo "f56b75a77953a428000f6cf9b72dd942fb0f74a82abca5f777ca31e3b4457e92  dreamweave-tools-linux.zip" | sha256sum -c
+unzip dreamweave-tools-linux.zip -d linux
+
+curl -sL -o dreamweave-tools-macos.zip https://github.com/DreamWeave-MP/DW-tools/releases/download/v${dw_tools_version}/dreamweave_tools_macos.zip
+echo "fdd06ce903b2240b498e56ef6f4c65b8f7f94099149dce011d2b36199bc5199a  dreamweave-tools-macos.zip" | sha256sum -c
+unzip dreamweave-tools-macos.zip -d macos
+
+curl -sL -o dreamweave-tools-windows.zip https://github.com/DreamWeave-MP/DW-tools/releases/download/v${dw_tools_version}/dreamweave_tools_windows.zip
+echo "f8c65288fbc36136d0f81c96e79ce5a01f91b46e1c4e2413ca0578291d28a9cd  dreamweave-tools-windows.zip" | sha256sum -c
+unzip dreamweave-tools-windows.zip -d windows
+
+rm -rf *.zip
+
+cp -r windows windows-dev
+mv windows windows-stable
+
+cp -r linux linux-dev
+mv linux linux-stable
+
+cp -r macos macos-dev
+mv macos macos-stable
+
+curl -sL -o dev-resources.zip https://github.com/DreamWeave-MP/dreamweave-high-end-resources/releases/download/${dw_res_version}/dev-resources.zip
+echo "4f8bf7700af0d8b198a55a56473999e7353ef3b4a847c17febad7003f6eefe56  dev-resources.zip" | sha256sum -c
+
+curl -sL -o stable-resources.zip https://github.com/DreamWeave-MP/dreamweave-high-end-resources/releases/download/${dw_res_version}/stable-resources.zip
+echo "87c7f79a3a67d4012bffac9fc16e409c36f2fbcd9d3bffb5dfbcaa5720030d50  stable-resources.zip" | sha256sum -c
+
+unzip dev-resources.zip -d linux-dev/Mods/PBR
+unzip dev-resources.zip -d macos-dev/Mods/PBR
+unzip dev-resources.zip -d windows-dev/Mods/PBR
+
+unzip stable-resources.zip -d linux-dev/Mods/PBR
+unzip stable-resources.zip -d macos-dev/Mods/PBR
+unzip stable-resources.zip -d windows-dev/Mods/PBR
+
+rm stable-resources.zip dev-resources.zip
+
+zip -qqr windows-dev.zip
+zip -qqr windows-stable.zip
+zip -qqr linux-dev.zip
+zip -qqr linux-stable.zip
+zip -qqr macos-dev.zip
+zip -qqr macos-stable.zip
