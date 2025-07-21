@@ -54,9 +54,9 @@ unzip -oqq stable-resources.zip -d windows-dev/Mods/PBR
 
 rm stable-resources.zip dev-resources.zip
 
-zip -qqr windows-dev.zip
-zip -qqr windows-stable.zip
-zip -qqr linux-dev.zip
-zip -qqr linux-stable.zip
-zip -qqr macos-dev.zip
-zip -qqr macos-stable.zip
+zip -qqr windows-dev.zip windows-dev
+zip -qqr windows-stable.zip windows-stable
+zip -qqr linux-dev.zip linux-dev
+zip -qqr linux-stable.zip linux-stable
+zip -qqr macos-dev.zip macos-dev
+zip -qqr macos-stable.zip macos-stable
