@@ -6,7 +6,7 @@ declare -a parent_directories
 is_data_directory() {
     local dir_name=$(basename "$1" | tr '[:upper:]' '[:lower:]')
     case "$dir_name" in
-        meshes|animations|textures|icons|bookart|scripts|playlists|sound|music)
+        meshes|mygui|animations|textures|icons|bookart|scripts|playlists|sound|music|l10n)
             return 0  # true
             ;;
         *)
@@ -39,7 +39,7 @@ while IFS= read -r -d '' dir; do
             parent_directories+=("$parent_dir")
         fi
     fi
-done < <(find . -type d -print0 2>/dev/null)
+done < <(find -L . -type d -print0 2>/dev/null)
 
 # Process content files
 while IFS= read -r -d '' file; do
@@ -56,7 +56,7 @@ while IFS= read -r -d '' file; do
             parent_directories+=("$parent_dir")
         fi
     fi
-done < <(find . -type f -print0 2>/dev/null)
+done < <(find -L . -type f -print0 2>/dev/null)
 
 # Sort arrays for consistent output
 IFS=$'\n' sorted_parent_dirs=($(sort -u <<<"${parent_directories[*]}"))
