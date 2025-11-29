@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+declare -a content_files
+declare -a parent_directories
+
+is_data_directory() {
+    local dir_name=$(basename "$1" | tr '[:upper:]' '[:lower:]')
+    case "$dir_name" in
+        meshes|animations|textures|icons|bookart|scripts|playlists|sound|music)
+            return 0  # true
+            ;;
+        *)
+            return 1  # false
+            ;;
+    esac
+}
+
+is_content_file() {
+    local file=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+    case "$file" in
+        *.esp|*.esm|*.omwaddon|*.omwscripts|*.omwgame)
+            return 0  # true
+            ;;
+        *)
+            return 1  # false
+            ;;
+    esac
+}
+
+echo "Scanning current directory and subdirectories for OpenMW content..."
+
+# Process data directories first
+while IFS= read -r -d '' dir; do
+    if is_data_directory "$dir"; then
+        # Get the parent directory of this data directory
+        parent_dir=$(dirname "$dir")
+        # Remove leading ./ if present and avoid adding current directory "."
+        if [[ "$parent_dir" != "." && ! " ${parent_directories[@]} " =~ " ${parent_dir} " ]]; then
+            parent_directories+=("$parent_dir")
+        fi
+    fi
+done < <(find . -type d -print0 2>/dev/null)
+
+# Process content files
+while IFS= read -r -d '' file; do
+    if is_content_file "$file"; then
+        # Add filename to content files
+        filename=$(basename "$file")
+        if [[ ! " ${content_files[@]} " =~ " ${filename} " ]]; then
+            content_files+=("$filename")
+        fi
+        
+        # Also add parent directory to parent_directories
+        parent_dir=$(dirname "$file")
+        if [[ "$parent_dir" != "." && ! " ${parent_directories[@]} " =~ " ${parent_dir} " ]]; then
+            parent_directories+=("$parent_dir")
+        fi
+    fi
+done < <(find . -type f -print0 2>/dev/null)
+
+# Sort arrays for consistent output
+IFS=$'\n' sorted_parent_dirs=($(sort -u <<<"${parent_directories[*]}"))
+IFS=$'\n' sorted_content_files=($(sort -u <<<"${content_files[*]}"))
+
+echo ""
+echo "=== Generated openmw.cfg entries ==="
+echo ""
+
+# Output parent directories (data entries)
+for dir in "${sorted_parent_dirs[@]}"; do
+    # Remove leading ./ if present
+    clean_dir="${dir#./}"
+    echo "data=$clean_dir"
+done
+
+# Output content files
+for file in "${sorted_content_files[@]}"; do
+    echo "content=$file"
+done
+
+echo ""
+echo "Total data entries found: ${#sorted_parent_dirs[@]}"
+echo "Total content files found: ${#sorted_content_files[@]}"
