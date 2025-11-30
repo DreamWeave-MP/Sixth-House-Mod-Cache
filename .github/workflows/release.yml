@@ -26,7 +26,7 @@ jobs:
           macos-dev.zip
           macos-stable.zip
         make_latest: true
-        generate release_notes: true
+        generate_release_notes: true
         body: |
           Freshly baked modlists - batch ${{ github.ref_name }}
           • Built: ${{ github.run_number }} (Attempt ${{ github.run_attempt }})
