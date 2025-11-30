@@ -1,4 +1,37 @@
 config:
+  clouds:
+    sampling_quality: 0
+    scattering_factor: 1
+    replace_skybox: true
+    better_sun: true
+    clouds_enabled: true
+    dynamic_clouds: true
+    cloud_coverage: 0.5
+    cloud_density: 0
+    cloud_alt: 75000
+    cloud_depth: 120000
+    cloud_detail: 3
+    cloud_light_factor: 0
+    mist_enabled: true
+    dynamic_mist: true
+    mist_density: 0.5
+    mist_alt: 1500
+    mist_speed: 1
+    mist_swirling: false
+    point_glow_enabled: true
+    point_glow_intensity: 0.349999994
+    point_glow_min_fade_dist: 50
+    point_glow_max_fade_dist: 100
+    point_glow_fade: 0.200000003
+    point_glow_diffusion: false
+    point_glow_min: 42
+    point_glow_falloff: 1.17499995
+    clamp_point_glow: true
+    dithering_enabled: true
+    temporal_dithering: true
+    dithering_strength: 256
+    interior_mist: 0.150000006
+    debug: false
   FollowerAA:
     uRange: 5
     uThreshold: 20
