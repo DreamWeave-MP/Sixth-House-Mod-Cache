@@ -128,3 +128,14 @@ config:
     uSkyFactor: 0.5
     uRadius: 0.5
     uStrength: 0.25
+  speedBlur:
+    uRadius: 0
+  blackScreen:
+    opacity: 0
+  hexDoFProgrammable:
+    uDepth: 1
+    uAperture: 0
+  sneakVignette:
+    uMidPoint: 1
+  blackBarsProgrammable:
+    ratio: 0
