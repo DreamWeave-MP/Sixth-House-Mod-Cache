@@ -1,55 +1,130 @@
 config:
+  reshade-CAS:
+    Contrast: 0.75
+    Sharpening: 0.3
+    uEnabled: true
+  ssao:
+    cfg_intensity: 12.0000076
+    cfg_samples: 128
+    cfg_radius: 66
+    cfg_threshold: 0.100000076
+    cfg_normal_intensity: 0.5
+    cfg_depth_compensation: 3.29999924
+    cfg_blur_factor: 0.200000018
+    cfg_temporal_filtering: 0.499999911
+    cfg_enable_hands: true
+    cfg_enabled: true
+    cfg_debug: false
+    cfg_debug_blend: false
+    cfg_debug_marker: false
+    cfg_debug_normals: false
+    cfg_debug_samples: false
+    cfg_temporal_filter_when_paused: false
   clouds:
-    sampling_quality: 0
-    scattering_factor: 1
-    replace_skybox: true
-    better_sun: true
+    quality: 2.5
+    scattering_factor: 2.99999928
     clouds_enabled: true
     dynamic_clouds: true
+    cloud_density: 1.20000005
+    cloud_height: 250000
+    mist_enabled: true
+    dynamic_mist: true
+    mist_density: 0.25
+    mist_height: 0
+    mist_speed: 3
+    mist_detail: 1.5
+    mist_swirling: true
+    replace_skybox: false
+    better_sun: false
+    clamp_point_glow: true
+    dithering_enabled: true
+    point_glow_intensity: 0.100000001
+    sampling_quality: 6
     cloud_coverage: 0.5
-    cloud_density: 0
     cloud_alt: 75000
     cloud_depth: 120000
     cloud_detail: 3
-    cloud_light_factor: 0
-    mist_enabled: true
-    dynamic_mist: true
-    mist_density: 0.5
-    mist_alt: 1500
-    mist_speed: 1
-    mist_swirling: false
+    cloud_light_factor: -0.150000006
+    mist_alt: 250
     point_glow_enabled: true
-    point_glow_intensity: 0.349999994
-    point_glow_min_fade_dist: 50
-    point_glow_max_fade_dist: 100
-    point_glow_fade: 0.200000003
+    point_glow_min_fade_dist: 100
+    point_glow_max_fade_dist: 120
+    point_glow_fade: 0.300000012
     point_glow_diffusion: false
-    point_glow_min: 42
-    point_glow_falloff: 1.17499995
-    clamp_point_glow: true
-    dithering_enabled: true
-    temporal_dithering: true
-    dithering_strength: 256
+    point_glow_min: 16
+    point_glow_falloff: 0.980000019
     interior_mist: 0.150000006
     debug: false
-  FollowerAA:
-    uRange: 5
-    uThreshold: 20
-    uNormalDotOffset: 0
-    uLumaLikenessThreshold: 0.150000006
-    uDepthNormalHack: true
-    uDoDiagonals: true
-    uSkipAll: false
-    uMSAACompatibilityHack: 0
+  godrays:
+    bluenoise: false
+    horizonclipping: true
+    raysunradius: 0.25
+    raystrength: 1.70000005
+    rayfalloff: 1.10000002
+    rayfalloffconst: 0.125
+    raysunfalloff: 1.5
+    centervis: 0.300000012
+    sunrayocclude: 0.75
+    brightnessadd: 1.25
+    offscreenrange: 0.5
+    sundiscradius: 0.00999999978
+    sundiscbrightness: 1.60000002
+    sundiscdesaturate: 0.400000006
+    sundiscocclude: 0.75
+    N: 50
+    cloudocclusion: true
+    rayColorR: 1
+    rayColorG: 0.75
+    rayColorB: 0.550000012
+    raybrightness: 1
+    sundischorizonmultiplier: 2
+  hdr:
+    neutral_point: 0.25
+    sensitivity: 0.100000001
+    max_exposure: 1.60000002
+  depth_of_field:
+    blur_radius: 0.25
+    blur_falloff: 10
+    R: 2
+    blur_fog: false
+    blur_out_of_focus: true
+  Film Grain TwoPass:
+    Intensity: 0.5
+    Variance: 0.660000026
+    Speed: 1.5
+    SignalToNoiseRatio: 8
+  reshade-colourfulness:
+    colourfulness: 0.25
+    lim_luma: 0.420000255
+    enable_dither: false
+    col_noise: true
+    uEnabled: true
+  war_adjustments:
+    uBrightness: 0.5
+    uContrast: 0.540000021
+    uGamma: 1
+    uSaturation: 1.20000005
+    uColorTemp: 0.660000026
+    uColorTint: 0.5
+  vignette:
+    uMidPoint: 0.5
+    uRoundness: 0.330000013
+    uFeather: 0.959999979
+    uColor:
+      - 0.100000001
+      - 0.100000001
+      - 0.119999997
+  Cinematic Black Bars:
+    ratio: 2.20000005
+    soft: 0.00999999978
+  HealthFatigueEffect:
+    uFatigueFactor: 0
+    uHealthFactor: 0
+    uMagickaFactor: 0
+  bloomlinear:
     uGamma: 2.20000005
-  speedBlur:
-    uRadius: 0
-  blackScreen:
-    opacity: 0
-  hexDoFProgrammable:
-    uDepth: 0
-    uAperture: 0
-  sneakVignette:
-    uMidPoint: 1
-  blackBarsProgrammable:
-    ratio: 0
+    uThreshold: 0.349999994
+    uClamp: 1
+    uSkyFactor: 0.5
+    uRadius: 0.5
+    uStrength: 0.25
