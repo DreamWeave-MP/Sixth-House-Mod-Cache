@@ -1,17 +1,22 @@
 config:
+  FollowerAA:
+    uRange: 5
+    uThreshold: 20
+    uNormalDotOffset: 0
+    uLumaLikenessThreshold: 0.150000006
+    uDepthNormalHack: true
+    uDoDiagonals: true
+    uSkipAll: false
+    uMSAACompatibilityHack: 0
+    uGamma: 2.20000005
   speedBlur:
     uRadius: 0
   blackScreen:
     opacity: 0
   hexDoFProgrammable:
-    uDepth: 70
+    uDepth: 0
     uAperture: 0
   sneakVignette:
     uMidPoint: 1
   blackBarsProgrammable:
     ratio: 0
-  OblivionLockpicking:
-    uDarken: true
-    uDarkenStrength: 0.5
-    uBlur: true
-    uBlurStrength: 1
