@@ -13,7 +13,7 @@
 		<Channel number="2" direction="DIRECT" percentage="1" />
 	</Control>
 	<Control name="3" autoChangeDirectionOnLimitsAfterStop="false" autoReverseToInitialValue="true" initialValue="0" stepSize="MAX" stepsPerSeconds="MAX">
-		<MouseButtonBinder button="RIGHT" direction="INCREASE" />
+		<KeyBinder key="43" direction="INCREASE" />
 		<JoystickButtonBinder button="1" direction="INCREASE" deviceId="1" />
 		<Channel number="3" direction="DIRECT" percentage="1" />
 	</Control>
@@ -38,7 +38,7 @@
 		<Channel number="8" direction="DIRECT" percentage="1" />
 	</Control>
 	<Control name="9" autoChangeDirectionOnLimitsAfterStop="false" autoReverseToInitialValue="true" initialValue="0" stepSize="MAX" stepsPerSeconds="MAX">
-		<KeyBinder key="44" direction="INCREASE" />
+		<KeyBinder key="8" direction="INCREASE" />
 		<JoystickButtonBinder button="0" direction="INCREASE" deviceId="1" />
 		<Channel number="9" direction="DIRECT" percentage="1" />
 	</Control>
@@ -47,8 +47,8 @@
 		<JoystickAxisBinder axis="5" direction="INCREASE" deviceId="1" />
 		<Channel number="10" direction="DIRECT" percentage="1" />
 	</Control>
-	<Control name="11" autoChangeDirectionOnLimitsAfterStop="false" autoReverseToInitialValue="true" initialValue="0.5" stepSize="MAX" stepsPerSeconds="MAX">
-		<KeyBinder key="8" direction="INCREASE" />
+	<Control name="11" autoChangeDirectionOnLimitsAfterStop="false" autoReverseToInitialValue="true" initialValue="0" stepSize="MAX" stepsPerSeconds="MAX">
+		<KeyBinder key="27" direction="INCREASE" />
 		<JoystickAxisBinder axis="4" direction="INCREASE" deviceId="1" />
 		<Channel number="11" direction="DIRECT" percentage="1" />
 	</Control>
@@ -127,7 +127,6 @@
 		<Channel number="29" direction="DIRECT" percentage="1" />
 	</Control>
 	<Control name="30" autoChangeDirectionOnLimitsAfterStop="false" autoReverseToInitialValue="true" initialValue="0" stepSize="MAX" stepsPerSeconds="MAX">
-		<KeyBinder key="43" direction="INCREASE" />
 		<JoystickButtonBinder button="8" direction="INCREASE" deviceId="1" />
 		<Channel number="30" direction="DIRECT" percentage="1" />
 	</Control>
