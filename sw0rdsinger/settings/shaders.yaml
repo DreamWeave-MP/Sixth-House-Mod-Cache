@@ -1,18 +1,18 @@
 config:
   adjustments:
     uGamma: 1
-    uContrast: 1.04999995
+    uContrast: 1
   BadCRT:
     uScanlines: 240
     uBleed: 0.100000001
     uStrength: 0.25
   speedBlur:
-    uRadius: 0
+    uRadius: 0.00016265508
   blackScreen:
     opacity: 0
   hexDoFProgrammable:
-    uDepth: 1
-    uAperture: 0.000539205677
+    uDepth: 0
+    uAperture: 0
   sneakVignette:
     uMidPoint: 1
   blackBarsProgrammable:
@@ -44,8 +44,10 @@ config:
         - 0
         - 0
         - 1
-    uMaxArcAngle: 1.29521799
-    uCurArcAngle: 1.29521799
+    uMaxArcAngle: 2.4664259
+    uCurArcAngle: 2.15749168
+    uLostHpTailAngle: 2.15749168
+    uOnHitWaveProgress: 1
   epo_detd_skooma:
     drugged_distortion_amount: 0
     drugged_doublevision_amount: 0
@@ -64,3 +66,166 @@ config:
     Tuning: 2
     Scale: 1
     uEnabled: true
+  pixelate:
+    uPixelation: 4
+    uEnabled: true
+  dither8x8:
+    uDitheredBrightness: 1
+  ssao_hq:
+    save_my_hands: true
+    max_ray_radius: 8
+    multiplier: 1.79999995
+    occlusion_falloff: 7
+    blur_falloff: 0.0199999996
+    blur_radius: 8
+  dither4x4:
+    uLumaStandard: 2
+    uDitherSize: 1
+    uDitheredBrightness: 1
+  bloomlinear:
+    uGamma: 2.20000005
+    uThreshold: 0.349999994
+    uClamp: 1
+    uSkyFactor: 0.5
+    uRadius: 0.5
+    uStrength: 0.25
+  reshade-CAS:
+    Contrast: 0
+    Sharpening: 1
+    uEnabled: true
+  clouds:
+    sampling_quality: 0
+    scattering_factor: 1
+    replace_skybox: true
+    better_sun: true
+    clouds_enabled: true
+    dynamic_clouds: true
+    cloud_coverage: 0.5
+    cloud_density: 0
+    cloud_alt: 75000
+    cloud_depth: 120000
+    cloud_detail: 3
+    cloud_light_factor: 0
+    mist_enabled: true
+    dynamic_mist: true
+    mist_density: 0.5
+    mist_alt: 1500
+    mist_speed: 1
+    mist_swirling: false
+    point_glow_enabled: true
+    point_glow_intensity: 0.349999994
+    point_glow_min_fade_dist: 50
+    point_glow_max_fade_dist: 100
+    point_glow_fade: 0.200000003
+    point_glow_diffusion: false
+    point_glow_min: 42
+    point_glow_falloff: 1.17499995
+    clamp_point_glow: true
+    dithering_enabled: true
+    temporal_dithering: true
+    dithering_strength: 256
+    interior_mist: 0.150000006
+    debug: false
+  godrays:
+    bluenoise: true
+    horizonclipping: true
+    N: 20
+    raysunradius: 0.25
+    raystrength: 1.70000005
+    rayfalloff: 1.10000002
+    rayfalloffconst: 0.125
+    raysunfalloff: 1.5
+    centervis: 0.300000012
+    sunrayocclude: 0.75
+    brightnessadd: 1.25
+    offscreenrange: 0.5
+    sundiscradius: 0.0250000004
+    sundiscbrightness: 1.60000002
+    sundiscdesaturate: 0.400000006
+    sundiscocclude: 0.75
+  hdr:
+    neutral_point: 0.335000008
+    sensitivity: 0.109999999
+    max_exposure: 3.20000005
+  FollowerAA:
+    uRange: 5
+    uThreshold: 20
+    uNormalDotOffset: 0
+    uLumaLikenessThreshold: 0.150000006
+    uDepthNormalHack: true
+    uDoDiagonals: true
+    uSkipAll: false
+    uMSAACompatibilityHack: 0
+    uGamma: 2.20000005
+  reshade-colourfulness:
+    colourfulness: 0.400000006
+    lim_luma: 0.699999988
+    enable_dither: false
+    col_noise: true
+    uEnabled: true
+  bloomKawase:
+    uOldThreshold: false
+    uThreshold: 2
+    uBias: -0.5
+    uBrightness: 1
+    uScale:
+      - 3
+      - 3
+    uAmount: 1
+    uSkyFactor: 0.5
+    uDepthMask: 0
+    uAutoSkyBrightness: false
+    uAutoSkyBrightnessOffset: 0
+    uDither: true
+    uDitherStrength: 32
+    uTemporalDither: false
+    uGrayscale: false
+    uColor:
+      - 1
+      - 1
+      - 1
+    uDebug: false
+    uToggle: true
+  bayerDither:
+    uLumaStandard: 1
+    uDitherSize: 2
+    uQuantizationLevels: 6.7999959
+    uDitherMode: 4
+    uTwoDarkR: 0
+    uTwoDarkG: 0.0899999887
+    uTwoDarkB: 0
+    uTwoLightR: 1
+    uTwoLightG: 0
+    uTwoLightB: 1
+    uBrightnessMult: 1.00000012
+    uPSXColorCount: 22.3999634
+  Cinematic Black Bars:
+    ratio: 2.20000005
+    soft: 0.00499999989
+  retroDither:
+    uColorDepth: 43
+    uResolutionScale: 23
+  valvedither:
+    uColorDepth: 76
+    temporalDither: false
+    enabled: true
+    clampColors: false
+  bloomPS2:
+    uThreshold: 2
+    uScale:
+      - 1
+      - 1
+    uColor:
+      - 1
+      - 1
+      - 1
+    uAmount: 1
+    uSkyFactor: 0.5
+    uGrayscale: false
+    uDebug: false
+    uToggle: true
+  OblivionLockpicking:
+    uDarken: true
+    uDarkenStrength: 0.5
+    uBlur: true
+    uBlurStrength: 1
