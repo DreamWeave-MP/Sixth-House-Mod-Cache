@@ -25,7 +25,6 @@ excluded_plugins = [
     "Toolgun.omwaddon",
 ]
 excluded_ids = []
-output_dir = "/home/s3kshun8/.config/openmw/override"
 save_config = false
 
 # [light_overrides."^torch"]
@@ -33,25 +32,20 @@ save_config = false
 # duration_mult = 25.0
 # flag = "NONE"
 
-[light_overrides.light_com_candle_03_64]
-hue = 4
-saturation = 0.7599999904632568
-value = 0.46299999952316284
+[light_overrides.light_com_candle_02_64]
+hue = 3
+saturation = -1.7599999904632568
+value = -1.46299999952316284
+
+# [light_overrides.Torch_000]
+# hue = 239
+# radius = 254
+# duration = 1199.0
 
 # [light_overrides.Torch_001]
-# hue = 240
-# radius = 255
-# duration = 1200.0
-
-# [light_overrides.Torch_002]
-# hue_mult = 1.2999999523162842
-# radius_mult = 2.0
+# hue_mult = 0.2999999523162842
+# radius_mult = 1.0
 # flag = "PULSESLOW"
-
-# [ambient_overrides."caius cosades' house".ambient]
-# hue = 35
-# saturation = 0.2
-# value = 0.12
 
 # [ambient_overrides."caius cosades' house".sunlight]
 # hue = 40
